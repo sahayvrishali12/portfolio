@@ -44,45 +44,52 @@ body {
 .shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    animation: float 25s infinite ease-in-out alternate;
+    filter: blur(90px);
+    animation: float 22s infinite ease-in-out;
 }
 .shape-1 {
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 800px;
     background: rgba(247, 178, 183, 0.4);
-    top: -100px;
-    left: -100px;
+    top: -150px;
+    left: -150px;
+    animation-delay: 0s;
 }
 .shape-2 {
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     background: rgba(252, 230, 169, 0.4);
-    bottom: 20%;
-    right: -100px;
+    bottom: 10%;
+    right: -150px;
     animation-delay: -5s;
 }
 .shape-3 {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     background: rgba(200, 220, 255, 0.4);
-    top: 40%;
-    left: 20%;
-    animation-delay: -10s;
+    top: 30%;
+    left: 15%;
+    animation-delay: -11s;
 }
 .shape-4 {
-    width: 450px;
-    height: 450px;
+    width: 650px;
+    height: 650px;
     background: rgba(255, 200, 230, 0.3);
-    bottom: -150px;
-    left: 30%;
-    animation-delay: -15s;
+    bottom: -200px;
+    left: 20%;
+    animation-delay: -16s;
 }
 @keyframes float {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(15%, -15%) rotate(30deg); }
-    66% { transform: translate(-10%, 15%) rotate(-20deg); }
-    100% { transform: translate(25%, 20%) rotate(90deg); }
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(15vw, -10vh) scale(1.1); }
+    66% { transform: translate(-10vw, 15vh) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shape {
+        animation: none;
+    }
 }
 
 /* ---------------------------------
@@ -537,12 +544,6 @@ body {
 .case-study-section h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary); }
 .case-study-section p { color: var(--text-secondary); line-height: 1.6; }
 
-/* ---------------------------------
-   BUTTON PROXIMITY HOVER (Let's Connect)
-   --------------------------------- */
-.lets-connect-btn {
-    transition: background-color 0.1s, color 0.1s;
-}
 
 html {
     scroll-behavior: smooth;
@@ -608,7 +609,7 @@ html {
     background: var(--text-primary);
     color: var(--bg-base);
 }
-.hero-btn.primary-btn:hover { opacity: 0.85; }
+.hero-btn.primary-btn:hover { background: transparent; color: var(--text-primary); }
 .hero-btn.secondary-btn {
     background: transparent;
     color: var(--text-primary);
